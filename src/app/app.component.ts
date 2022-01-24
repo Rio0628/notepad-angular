@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'notepad-angular';
+  public title = 'notepad-angular';
+
+  test() {
+    console.log('mario');
+  }
 }
+
+console.log('mariop')

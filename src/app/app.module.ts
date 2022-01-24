@@ -11,11 +11,13 @@ import { GaugeModule } from 'angular-gauge';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select'; 
+import { MatSelectModule } from '@angular/material/select';
+import { MainNoteViewComponent } from './components/main-note-view/main-note-view.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainNoteViewComponent
   ],
   imports: [
     BrowserModule,
