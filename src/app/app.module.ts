@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GaugeModule } from 'angular-gauge';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MainNoteViewComponent } from './components/main-note-view/main-note-view.component';
@@ -34,6 +35,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatSelectModule,
     MatTabsModule,
     MatIconModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
