@@ -1,84 +1,6 @@
-<style>
-
-.navbar {
-  color: white;
-  height: 5rem;
-  display: flex; 
-  justify-content: space-between;
-  align-items: center;
-}
-
-#logo {
-  position: absolute;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.noteNameInput {
-  width: 15rem;
-  height: 2rem;
-  padding: 0px 10px;
-  outline: none;
-}
-
-.icon {
-  position: relative;
-  cursor: pointer;
-  /* outline: 1px solid red; */
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%; 
-}
-
-.icon:hover {
-  background: #3F474E;
-  transition: .3s linear;
-} 
-
-.icon:active {
-  background: none;
-  transition: .1s linear;
-}
-
-@media screen and (min-width: 600px) {
-  .noteNameInput {
-    width: 20rem;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .noteNameInput {
-    width: 25rem;
-  }
-}
-
-
-@media screen and (min-width: 1000px) {
-  #logo {
-    position: relative;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .icon {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .noteNameInput {
-    width: 30rem;
-  }
-}
-
-</style>
 
 <nav class='navbar navbar-expand-lg navbar-light bg-dark'>
-  <mat-icon class='icon'>menu</mat-icon>
+  <mat-icon routerLink='sidebar' class='icon'>menu</mat-icon>
 
   <a class='navbar-brand' id='logo'>NotePad</a>
 
@@ -90,4 +12,7 @@
   />
 </nav>
 
+<h1>{{title}}</h1>
+
 <router-outlet></router-outlet>
+
