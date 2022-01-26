@@ -1,0 +1,125 @@
+
+mat-sidenav-container {
+    position: fixed;
+    height: 100%;
+    width: 13rem;
+    background: #fafafa;
+    display: flex;
+    box-shadow: 1px 1px 5px #343a40;
+    flex-direction: column;
+    align-items: center;
+    /* opacity: 0; */
+    /* outline: 1px solid red; */
+}
+
+.sidenav {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    box-shadow: 2px 2px 2px #343a40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebarLogo {
+    position: relative;
+    top: 1rem;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.addNoteForm {
+    position: relative;
+    top: 3rem;
+    display: flex;
+    flex-direction : column;
+    align-items: center; 
+}
+
+.addNoteForm * {
+    height: 2rem;
+    width: 90%;
+    margin-bottom: .5rem;
+    /* background: red; */
+}
+
+#noteNameInput {
+    width: 95%;
+}
+
+.sidenav #submitBtn {
+    height: 2.1rem;
+    width: 95%;
+}
+
+.notesprvCntr {
+    position: relative;
+    top: 5rem;
+    width: 100%;
+    height: 70%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-shadow: 0px -2px 5px #343a40;
+}
+
+.notesprvCntr::-webkit-scrollbar {
+    width: 0px;
+}
+
+.indPrevNote {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    cursor: pointer;
+    box-shadow: 0px 1px 0px #343a40;
+    /* outline: 1px solid blue; */
+}
+
+.indPrevNote:hover {
+    background: rgba(52, 58, 64, .1);
+    transition: .1s linear;
+}
+
+.indPrevNote:active {
+    background: none;
+}
+
+.prevNoteName {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    width: 77%;
+    height: 2rem; 
+    font-size: 17px;
+    font-weight: 500;
+    overflow: auto;
+    /* outline: 1px solid red; */
+}
+
+.removeNoteBtn {
+    position: relative;
+    right: 10px;
+    /* width: 50px; */
+    /* outline: 1px solid red; */
+    cursor: pointer;
+}
+
+.removeNoteBtn:hover {
+    color: #fff;
+    background: #bf0603;
+    transition: .1s linear;
+}
+
+.removeNoteBtn:active {
+    color:#343a40;
+    background: none;
+    transition: .1s linear;
+}
+

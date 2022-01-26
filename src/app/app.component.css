@@ -13,7 +13,6 @@
     position: absolute;
     cursor: pointer;
     opacity: 0;
-    pointer-events: none;
   }
   
   .noteNameInput {

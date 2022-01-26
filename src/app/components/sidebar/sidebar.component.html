@@ -1,1 +1,28 @@
-<p>sidebar works!</p>
+
+<mat-sidenav-container>
+    <mat-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content class='sidenav'>
+        <a class='navbar-brand' id='sidebarLogo'>NotePad</a>
+
+        <!-- <button type='submit' class='btn btn-primary btn-block' id='submitBtn'>Add Note</button> -->
+
+        <form class='addNoteForm'>
+            <input name='name' placeholder='Note Name' class='input-group-text' id='noteNameInput'/>
+
+            <button type='submit' class='btn btn-primary btn-block' id='submitBtn'>Add Note</button> 
+        </form>
+
+        <div class='notesprvCntr'>
+            <div class='indPrevNote'>
+                <p class='prevNoteName'>Note</p>
+                <mat-icon class='removeNoteBtn'>remove</mat-icon>
+            </div>
+            <div class='indPrevNote'>
+                <p class='prevNoteName'>Note</p>
+                <mat-icon class='removeNoteBtn'>remove</mat-icon>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
