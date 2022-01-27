@@ -123,3 +123,30 @@ mat-sidenav-container {
     transition: .1s linear;
 }
 
+@media screen and (min-width: 650px) {
+    mat-sidenav-container {
+        width: 15rem;
+    }
+
+    #noteNameInput, .sidenav #submitBtn {
+        width: 100%;
+    }
+ }
+  
+
+ @media screen and (min-width: 800px) {
+    mat-sidenav-container {
+        width: 17rem;
+    }
+
+    .addNoteForm {
+        width: 90%;
+    }
+  }
+
+@media screen and (min-width: 1000px) {
+    .container {
+        background: red;
+    }
+}
+  

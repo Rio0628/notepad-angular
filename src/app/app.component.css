@@ -53,7 +53,7 @@ body {
     transition: .1s linear;
   }
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 650px) {
     .noteNameInput {
       width: 20rem;
     }
