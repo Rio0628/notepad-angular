@@ -1,0 +1,123 @@
+
+ .dashboard {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    outline: 1px solid red;
+}
+
+.dashboard-heading {
+    position: relative;
+    top: 1rem;
+    width: 100vw;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    /* text-transform: uppercasea; */
+    outline: 1px solid red;
+}
+
+
+.addNoteForm, .dashboard-cntr #submitBtn {
+    position: relative;
+    top: 1rem;
+    width: 20rem;
+    /* outline: 1px solid blue; */
+}
+
+
+.dashboard-cntr #submitBtn {
+    height: 2rem;
+}
+
+.addNoteForm * {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: .3rem;
+}
+
+#notesCntr {
+    position: relative;
+    top: 2rem;
+    height: 70%; 
+    width: 20rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1rem);
+    grid-template-rows: repeat(3, 13rem);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* outline: 1px solid red; */
+}
+
+#notesCntr::-webkit-scrollbar {
+    width: 0px;
+}
+
+#indNote {
+    position: relative;
+    left: 2rem;
+    width: 16rem;
+    height: 12rem;
+}
+
+.card-body:hover {
+    background: rgba(52, 58, 64, .1);
+    transition: .1s linear;
+    cursor: pointer;
+}
+
+.card-body:active {
+    background: none;
+}
+
+#indNote .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.noteName {
+    height: 90px;
+    font-size: 18px;
+    font-weight: 600;
+    overflow: hidden;
+    /* outline: 1px solid green; */
+}
+
+.date-removeCntr {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 85%;
+    /* outline: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.noteCreatedDate {
+    position: relative;
+    top: 6px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.removeNoteBtn {
+    position: relative;
+    cursor: pointer;
+}
+
+.removeNoteBtn:hover {
+    color: #fff;
+    background: #bf0603;
+    transition: .1s linear;
+}
+
+.removeNoteBtn:active {
+    color:#343a40;
+    background: none;
+    transition: .1s linear;
+}
