@@ -46,10 +46,10 @@
     width: 20rem;
     display: grid;
     grid-template-columns: repeat(1, 1rem);
-    grid-template-rows: repeat(3, 13rem);
+    grid-row-gap: 1rem;
     overflow-x: hidden;
     overflow-y: scroll;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 #notesCntr::-webkit-scrollbar {
@@ -120,4 +120,15 @@
     color:#343a40;
     background: none;
     transition: .1s linear;
+}
+
+@media screen and (min-width: 650px) {
+    #notesCntr {
+        width: 38rem;
+        grid-template-columns: repeat(2, 18rem);
+    }
+
+    .addNoteForm, .dashboard-cntr #submitBtn {
+        width: 34rem;
+    }
 }
