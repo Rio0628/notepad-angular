@@ -159,3 +159,15 @@
         grid-template-columns: repeat(3, 18rem);
     }
 }
+
+@media screen and (min-width: 1900px) {
+    .dashboard  {
+        left: 40rem;
+    }
+}
+
+@media screen and (min-width: 2350px ) {
+    .dashboard {
+        left: 58rem;
+    }
+}

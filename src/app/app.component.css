@@ -114,3 +114,23 @@
     right: 13rem;
   }
 }
+
+@media screen and (min-width: 1900px) {
+  #logo {
+    left: 20rem;
+  }
+
+  .noteNameInput {
+    right: 22rem;
+  }
+}
+
+@media screen and (min-width: 2350px) {
+  #logo {
+    left: 37.5rem;
+  }
+
+  .noteNameInput {
+    right: 29rem;
+  }
+}

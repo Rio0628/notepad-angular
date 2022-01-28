@@ -201,3 +201,15 @@ mat-sidenav-container  {
         left: 10rem;
     }
 }
+
+@media screen and (min-width: 1900px) {
+    mat-sidenav-container {
+        left: 15rem;
+    }
+}
+
+@media screen and (min-width: 2350px) {
+    mat-sidenav-container {
+        left: 32rem;
+    }
+}
