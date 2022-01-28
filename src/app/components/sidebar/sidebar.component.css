@@ -1,6 +1,9 @@
 
 mat-sidenav-container {
-    position: fixed;
+    position: absolute;
+    left: -20rem;
+    opacity: 0;
+    pointer-events: none;
     height: 100%;
     width: 13rem;
     background: #fafafa;
@@ -8,8 +11,35 @@ mat-sidenav-container {
     box-shadow: 1px 1px 5px #343a40;
     flex-direction: column;
     align-items: center;
-    /* opacity: 0; */
+    animation: SidebarOutOfView 1.5s 1;
     /* outline: 1px solid red; */
+}
+
+@keyframes SidebarToView {
+    0% {
+        transform: translateX(-20rem);
+    }
+    50% {
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes SidebarOutOfView {
+    0% {
+        transform: translateX(0rem);
+    }
+
+    50% {
+        transform: translateX(-20rem);
+    }
+}
+
+mat-sidenav-container  {
+    position: absolute;
+    left: 0px;
+    opacity: 1;
+    pointer-events: auto;
+    animation: SidebarToView 1.5s 1;
 }
 
 .sidenav {
@@ -59,9 +89,9 @@ mat-sidenav-container {
     position: relative;
     top: 5rem;
     width: 100%;
-    height: 70%;
+    height: 77%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: scroll;;
     box-shadow: 0px -2px 5px #343a40;
 }
 
@@ -145,8 +175,11 @@ mat-sidenav-container {
   }
 
 @media screen and (min-width: 1000px) {
-    .container {
-        background: red;
+    mat-sidenav-container {
+        position: absolute;
+        animation: none;
+        opacity: 1;
+        /* width: 20rem; */
     }
 }
   

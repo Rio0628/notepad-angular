@@ -1,17 +1,18 @@
 
  .dashboard {
-    height: 100%;
-    width: 100%;
+    /* position: relative; */
+    height: 90%;
+    /* width: 80%; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 .dashboard-heading {
     position: relative;
     top: 2rem;
-    width: 100vw;
+    width: 100%;
     text-align: center;
     font-size: 30px;
     font-weight: 600;
@@ -130,5 +131,16 @@
 
     .addNoteForm, .dashboard-cntr #submitBtn {
         width: 34rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .dashboard {
+        position: relative;
+        left: 21rem;
+        width: 40rem;
+        /* height: 100%; */
+        /* outline: 1px solid red; */
+        /* background: green; */
     }
 }
