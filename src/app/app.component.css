@@ -18,6 +18,7 @@
 }
 
 #logo {
+  position: relative;
   font-size: 25px;
   letter-spacing: 1px;
   font-weight: 500;
@@ -91,5 +92,25 @@
 
   .info-container {
     display: flex;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #logo {
+    left: 10rem;
+  }
+
+  .noteNameInput {
+    right: 7rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #logo {
+    left: 15.5rem;
+  }
+
+  .noteNameInput {
+    right: 13rem;
   }
 }
