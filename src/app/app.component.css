@@ -9,12 +9,14 @@
 }
 
 .navbar {
+  position: relative;
   color: white;
   height: 4.2rem;
   display: flex; 
   justify-content: space-between;
   align-items: center;
-  outline: 1px solid red;
+  z-index: 2;
+  /* outline: 1px solid red; */
 }
 
 #logo {
