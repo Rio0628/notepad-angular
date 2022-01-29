@@ -1,1 +1,10 @@
-<p>main-note-view works!</p>
+
+<div class='noteView'>
+    <form [formGroup]='editorForm' {ngSubmit}='onSubmit()'>
+        <div class='form-group'>
+            <label for='editor'><p>Editor Test</p></label>
+
+            <quill-editor formControlName='editor'></quill-editor>
+        </div>
+    </form>
+</div>

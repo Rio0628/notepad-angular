@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { QuillModule } from 'ngx-quill';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { GaugeModule } from 'angular-gauge';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -38,7 +39,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatTabsModule,
     MatIconModule,
     MatSidenavModule,
-    QuillModule
+    QuillModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
