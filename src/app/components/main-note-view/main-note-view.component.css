@@ -11,7 +11,7 @@
 
 .returnBtnCntr {
     position: relative;
-    top: 3rem;
+    top: 1.5rem;
     width: 100%;
 }
 
@@ -44,7 +44,7 @@
     position: relative;
     /* top: 4rem; */
     height: 90%;
-    width: 21.4rem;
+    width: 21.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,13 +53,13 @@
 
 .form-group {
     position: relative;
-    top: 4rem;
+    top: 2rem;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 .nameBtnCntr {
@@ -97,18 +97,22 @@
     width: 100%;
 }
 
+@media screen and (min-width: 500px) {
+    .editorForm {
+        width: 25rem;
+        /* background: red; */
+    }
 
+    #noteNameInput { width: 16rem; }
+}
 
-/* 
-<div class='noteView'>
+@media screen and (min-width: 650px) {
+    .editorForm {
+        width: 35rem;
+    }
 
-    up]='editorForm' class='editorForm'>
-        <div class='form-group'>
-            <div class='nameBtnCntr'>
-                <input name='name' placeholder='Note Name' id='noteNameInput'/>
-            
-                <button class='saveNoteBtn' >Save Changes</button>
-            </div>
-
-            <quill-editor class='editor' formControlName='editor'></quill-editor>
-        </div>*/
+    #noteNameInput {
+        width: 18rem;
+        font-size: 18px;
+    }
+}
