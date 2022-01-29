@@ -17,7 +17,7 @@
 
 .returnBtn {
     position: relative;
-    left: 5%;
+    /* left: 1%; */
     font-size: 45px;
     height: 3rem;
     width: 3rem;
@@ -42,26 +42,32 @@
 
 .editorForm {
     position: relative;
-    top: 4rem;
-    height: 70%;
-    width: 100%;
+    /* top: 4rem; */
+    height: 90%;
+    width: 21.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    outline: 1px solid red;
 }
 
 .form-group {
+    position: relative;
+    top: 4rem;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    outline: 1px solid red;
 }
 
 .nameBtnCntr {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 
 #noteNameInput {
@@ -78,11 +84,17 @@
     position: relative;
     right: 10px;
     border: none;
+    font-size: 17px;
     background: none;
     font-weight: 600;
     cursor: pointer;
     color: #343a40;
-    outline: 1px solid #343a40;
+    outline: none;
+}
+
+.editor {
+    height: 90%;
+    width: 100%;
 }
 
 
