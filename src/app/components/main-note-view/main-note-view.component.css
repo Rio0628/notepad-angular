@@ -1,0 +1,102 @@
+
+.noteView {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .noteView * { outline: 1px solid red; } */
+
+.returnBtnCntr {
+    position: relative;
+    top: 3rem;
+    width: 100%;
+}
+
+.returnBtn {
+    position: relative;
+    left: 5%;
+    font-size: 45px;
+    height: 3rem;
+    width: 3rem;
+    font-weight: 600; 
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.returnBtn:hover, .saveNoteBtn:hover {
+    background: #343a40;
+    color: #fff;
+    transition: .2s linear ;
+}
+
+.returnBtn:active, .saveNoteBtn:active {
+    background: none;
+    color: #343a40;
+    transition: none;
+}
+
+.editorForm {
+    position: relative;
+    top: 4rem;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nameBtnCntr {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#noteNameInput {
+    position: relative;
+    left: 10px;
+    height: 2rem;
+    font-size: 17px;
+    background: none;
+    border: none;
+    /* outline: none;  */
+}
+
+.saveNoteBtn {
+    position: relative;
+    right: 10px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: #343a40;
+    outline: 1px solid #343a40;
+}
+
+
+
+/* 
+<div class='noteView'>
+
+    up]='editorForm' class='editorForm'>
+        <div class='form-group'>
+            <div class='nameBtnCntr'>
+                <input name='name' placeholder='Note Name' id='noteNameInput'/>
+            
+                <button class='saveNoteBtn' >Save Changes</button>
+            </div>
+
+            <quill-editor class='editor' formControlName='editor'></quill-editor>
+        </div>*/

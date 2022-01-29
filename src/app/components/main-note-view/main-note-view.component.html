@@ -1,10 +1,17 @@
 
 <div class='noteView'>
-    <form [formGroup]='editorForm' {ngSubmit}='onSubmit()'>
-        <div class='form-group'>
-            <label for='editor'><p>Editor Test</p></label>
 
-            <quill-editor formControlName='editor'></quill-editor>
+    <div class='returnBtnCntr'><mat-icon class='returnBtn'>keyboard_arrow_left</mat-icon></div>
+
+    <form [formGroup]='editorForm' class='editorForm'>
+        <div class='form-group'>
+            <div class='nameBtnCntr'>
+                <input name='name' placeholder='Note Name' id='noteNameInput'/>
+            
+                <button class='saveNoteBtn' >Save Changes</button>
+            </div>
+
+            <quill-editor class='editor' formControlName='editor'></quill-editor>
         </div>
     </form>
 </div>
