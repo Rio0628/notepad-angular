@@ -8,6 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   @Input() sidebarOpen = '';
+  addNoteToView = false;
+
+  setAddNote = () => this.addNoteToView === false ? this.addNoteToView = true : this.addNoteToView = false;
+
+  showAddNote = () => this.addNoteToView ? 'addNoteForm active' : 'addNoteForm';
+
+  showAddNoteBtn = () => this.addNoteToView ? 'addNoteBtnAct' : 'addNoteBtn';
+
   sidebarStatus = () => this.sidebarOpen === 'open' ? "sidenavCntr active" : 'sidenavCntr';
 
   ngOnInit(): void {

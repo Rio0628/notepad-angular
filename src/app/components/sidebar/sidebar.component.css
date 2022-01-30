@@ -77,6 +77,44 @@
     /* background: red; */
 }
 
+#addNoteBtn {
+    position: relative;
+    top: 3rem;
+    width: 95%;
+}
+
+#addNoteBtn {
+    height: 2rem;
+}
+
+.addNoteForm, #addNoteBtnAct {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.addNoteForm #addNoteBtn {
+    top: 0px;
+}
+
+.addNoteForm.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    overflow: hidden;
+    animation: bringNoteForm .5s 1;
+}
+
+@keyframes bringNoteForm {
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+    50% {
+        height: 4.2rem;
+    }
+}
+
 #noteNameInput {
     width: 95%;
 }
