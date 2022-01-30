@@ -2,12 +2,12 @@
 <div class='dashboard'>
     <p class='dashboard-heading'>All Notes</p>
 
-    <!-- <button type='submit' class='btn btn-primary btn-block' id='submitBtn'>Add Note</button> -->
+    <button type='submit' class='btn btn-primary btn-block' id={{showAddNoteBtn()}} (click)='setAddNote()'>Add Note</button>
 
-    <form class='addNoteForm'>
+    <form class={{showAddNote()}}>
         <input name='name' placeholder='Note Name' class='input-group-text' id='noteNameInput'/>
 
-        <button type='submit' class='btn btn-primary btn-block' id='submitBtnOpen'>Add Note</button> 
+        <button type='submit' (click)='setAddNote()' class='btn btn-primary btn-block' id='addNoteBtn'>Add Note</button> 
     </form>
 
     <div id='notesCntr'>

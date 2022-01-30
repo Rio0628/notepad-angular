@@ -21,23 +21,50 @@
     /* outline: 1px solid red; */
 }
 
-
-.addNoteForm, .dashboard #submitBtn {
+.addNoteForm, #addNoteBtn {
     position: relative;
     top: 2.2rem;
     width: 20rem;
     /* outline: 1px solid blue; */
 }
 
-
-.dashboard-cntr #submitBtn {
+#addNoteBtn {
     height: 2rem;
 }
+
+.addNoteForm, #addNoteBtnAct {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.addNoteForm.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    overflow: hidden;
+    animation: bringNoteForm .5s 1;
+}
+
+@keyframes bringNoteForm {
+    0% {
+        opacity: 0;
+        height: 10px;
+    }
+    50% {
+        height: 4.2rem;
+    }
+}
+
 
 .addNoteForm * {
     width: 100%;
     height: 2rem;
-    margin-bottom: .5rem;
+    margin-bottom: .2rem;
+}
+
+.addNoteForm #addNoteBtn {
+    top: 0px;
 }
 
 #notesCntr {
@@ -129,7 +156,7 @@
         grid-template-columns: repeat(2, 18rem);
     }
 
-    .addNoteForm, .dashboard-cntr #submitBtn {
+    .addNoteForm, #addNoteBtn {
         width: 34rem;
     }
 }
