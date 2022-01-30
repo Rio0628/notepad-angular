@@ -1,8 +1,8 @@
 
-mat-sidenav-container {
+.sidenavCntr {
     position: absolute;
     left: -20rem;
-    opacity: 0;
+    /* opacity: 0; */
     pointer-events: none;
     height: 100%;
     width: 13rem;
@@ -27,6 +27,7 @@ mat-sidenav-container {
 
 @keyframes SidebarOutOfView {
     0% {
+        left: 0px;
         transform: translateX(0rem);
     }
 
@@ -35,8 +36,7 @@ mat-sidenav-container {
     }
 }
 
-mat-sidenav-container  {
-    position: absolute;
+.sidenavCntr.active {
     left: 0px;
     opacity: 1;
     pointer-events: auto;
@@ -96,7 +96,7 @@ mat-sidenav-container  {
     box-shadow: 0px -2px 5px #343a40;
 }
 
-.notesprvCntr::-webkit-scrollbar, mat-sidenav-container::-webkit-scrollbar {
+.notesprvCntr::-webkit-scrollbar, .sidenavCntr::-webkit-scrollbar {
     width: 0px;
 }
 
@@ -155,7 +155,7 @@ mat-sidenav-container  {
 }
 
 @media screen and (min-width: 650px) {
-    mat-sidenav-container {
+    .sidenavCntr {
         width: 15rem;
     }
 
@@ -166,7 +166,7 @@ mat-sidenav-container  {
   
 
  @media screen and (min-width: 800px) {
-    mat-sidenav-container {
+    .sidenavCntr {
         width: 17rem;
     }
 
@@ -176,7 +176,7 @@ mat-sidenav-container  {
   }
 
 @media screen and (min-width: 1000px) {
-    mat-sidenav-container {
+    .sidenavCntr {
         position: absolute;
         animation: none;
         opacity: 1;
@@ -191,26 +191,26 @@ mat-sidenav-container  {
   
 
 @media screen and (min-width: 1300px) {
-    mat-sidenav-container {
+    .sidenavCntr {
         left: 5rem;
         width: 20rem;
     }
 }
 
 @media screen and (min-width: 1600px) {
-    mat-sidenav-container {
+    .sidenavCntr {
         left: 10rem;
     }
 }
 
 @media screen and (min-width: 1900px) {
-    mat-sidenav-container {
+    .sidenavCntr {
         left: 15rem;
     }
 }
 
 @media screen and (min-width: 2350px) {
-    mat-sidenav-container {
+    .sidenavCntr {
         left: 32rem;
     }
 }

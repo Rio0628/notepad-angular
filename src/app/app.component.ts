@@ -5,12 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   public title = 'notepad-angular';
+  sidebarState = 'close';
 
-  test() {
-    console.log('mario');
-  }
+  setSidebarState() {
+    if (this.sidebarState === 'open') { this.sidebarState = 'close' }
+    else this.sidebarState = 'open';
+  };
 }
 
-console.log('mariop')
