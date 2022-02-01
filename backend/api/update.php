@@ -10,7 +10,7 @@
 
         // Validate 
 
-        if ((int)$request->id < 1 || $request->name == '' || $request->note_body == '') {
+        if ((int)$request->id < 1 || $request->name === '' || $request->note_body === '') {
             return http_response_code(400); 
         }
 

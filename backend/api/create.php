@@ -10,22 +10,22 @@
         $request = json_encode($postdata);
 
         // Validate
-        if (trim($request->number) === '' || (float)$request->amount < 0) {
+        if ($request->name === '' || $request->note_body === '') {
             return http_response_code(400);
         }
 
         // Sanitize
-        $number = mysqli_real_escape_string($con, trim($request->number));
-        $amount = mysqli_real_escape_string($con, (int)$request->number);
+        $name = mysqli_real_escape_string($con, $request->name);
+        $note_body = mysqli_real_escape_string($con, $request->note_body);
 
         // Create 
-        $sql = "INSERT INTO `note`(`id`, `name`, `note_body`) VALUES (null, '{$number}', '{$amount}')";
+        $sql = "INSERT INTO `note`(`id`, `name`, `note_body`) VALUES (null, '{$name}', '{$note_body}')";
 
         if (mysqli_query($con, $sql)) {
             http_response_code(201);
             $note = [
-                'number' => $number,
-                'amount' => $amount,
+                'name' => $name,
+                'note_body' => $note_body,
                 'id'     => mysqli_insert_id($con)
             ];
             echo json_encode($notel);
