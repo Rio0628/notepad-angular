@@ -3,7 +3,7 @@
     header("Access-Control-Allow-Credentials: true");
     header("Access-Control-Allow-Methods: PUT, GET, DELETE, POST");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-    header("Content-Type: application/json; charser=UTF-8");
+    header("Content-Type: application/json; charset=UTF-8");
 
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
