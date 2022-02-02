@@ -28,7 +28,7 @@
                 'note_body' => $note_body,
                 'id'     => mysqli_insert_id($con)
             ];
-            echo json_encode($notel);
+            echo json_encode($note);
         }
         else { http_response_code(422); }
     }
