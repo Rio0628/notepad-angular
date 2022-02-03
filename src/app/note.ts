@@ -1,5 +1,5 @@
 export class Note {
-    id!: number;
-    name!: string;
-    note_body!: string;
+    id!: Number;
+    name!: String;
+    note_body!: String;
 }
