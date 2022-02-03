@@ -13,6 +13,7 @@ class CreateNoteTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('note');
         Schema::create('note', function (Blueprint $table) {
             $table->id();
             $table->string('name');
