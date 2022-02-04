@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
+import { Note } from '../../note';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,8 +11,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   @Input() sidebarOpen = '';
-  @Input() notes: any;
   addNoteToView = false;
+  notes: Note[] | undefined;
+
+  constructor(private apiService: ApiService, private router: Router) {}
 
   setAddNote = () => this.addNoteToView === false ? this.addNoteToView = true : this.addNoteToView = false;
 
@@ -20,6 +25,20 @@ export class SidebarComponent implements OnInit {
   sidebarStatus = () => this.sidebarOpen === 'open' ? "sidenavCntr active" : 'sidenavCntr';
 
   ngOnInit(): void {
+    this.apiService.getAll().subscribe((notes: Note[]) => {
+      this.notes = notes;
+      console.log(this.notes);
+    })
+  }
+
+  test(id: any) {
+    console.log(id);
+
+  }
+
+  test2() {
+    this.sidebarOpen = 'close';
+    this.router.navigate(['/note']);
   }
 }
 

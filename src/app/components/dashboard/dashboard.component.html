@@ -10,9 +10,9 @@
         <button type='submit' (click)='setAddNote()' class='btn btn-primary btn-block' id='addNoteBtn'>Add Note</button> 
     </form>
 
-    <div id='notesCntr' *ngFor="let note of notes; let i = index">
+    <div id='notesCntr' >
 
-        <div class='card' id='indNote' >
+        <div class='card' id='indNote' *ngFor="let note of notes; let i = index">
             <div class='card-body' (click)="test2()">
                 <p class='noteName'>{{note.name}}</p>
 
