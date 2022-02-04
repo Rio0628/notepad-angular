@@ -14,18 +14,18 @@ export class AppComponent implements OnInit {
   sidebarState = 'close';
   notes : Note[] | undefined;
 
-  constructor (private apiService : ApiService) {
-    this.apiService.readNotes().subscribe((notes: Note[]) => {
-      this.notes = notes;
-      console.log(this.notes);
-    })
-  }
+  constructor (private apiService : ApiService) { }
 
   // notes = ApiService.readNotes();
 
   setSidebarState = () => this.sidebarState === 'open' ? this.sidebarState = 'close' : this.sidebarState = 'open';
 
-  ngOnInit() : void {}
+  ngOnInit() : void {
+  
+  }
+
+
+
 }
 
 // console.log(title);

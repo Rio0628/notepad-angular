@@ -10,72 +10,23 @@
         <button type='submit' (click)='setAddNote()' class='btn btn-primary btn-block' id='addNoteBtn'>Add Note</button> 
     </form>
 
-    <div id='notesCntr'>
+    <div id='notesCntr' *ngFor="let note of notes; let i = index">
 
-        <div class='card' id='indNote' routerLink='note'>
+        <div class='card' id='indNote'  routerLink='note'>
             <div class='card-body'>
-                <p class='noteName'>Full Name Note hoauhbdfsohaohdfsahsdfapiHSDJHGVHKLHJKGHUILJKHIUOAOIJSDFGVHUIOAEDFRGOIJUHPIUSADFGPHIU9EQR</p>
+                <p class='noteName'>{{note.name}}</p>
 
                
             </div>
             <div class='date-removeCntr'>
                 <p class='noteCreatedDate'>00/00/0000</p>
         
-                <mat-icon class='removeNoteBtn'>remove</mat-icon>
-            </div>
-        </div>
-
-        <div class='card' id='indNote'>
-            <div class='card-body'>
-                <p class='noteName'>Full Name Note hoauhbdfsohaohdfsahsdfapiHSDJHGVHKLHJKGHUILJKHIUOAOIJSDFGVHUIOAEDFRGOIJUHPIUSADFGPHIU9EQR</p>
-
-               
-            </div>
-            <div class='date-removeCntr'>
-                <p class='noteCreatedDate'>00/00/0000</p>
-        
-                <mat-icon class='removeNoteBtn'>remove</mat-icon>
-            </div>
-        </div>
-
-        <div class='card' id='indNote'>
-            <div class='card-body'>
-                <p class='noteName'>Full Name Note hoauhbdfsohaohdfsahsdfapiHSDJHGVHKLHJKGHUILJKHIUOAOIJSDFGVHUIOAEDFRGOIJUHPIUSADFGPHIU9EQR</p>
-
-               
-            </div>
-            <div class='date-removeCntr'>
-                <p class='noteCreatedDate'>00/00/0000</p>
-        
-                <mat-icon class='removeNoteBtn'>remove</mat-icon>
-            </div>
-        </div>
-
-        <div class='card' id='indNote'>
-            <div class='card-body'>
-                <p class='noteName'>Full Name Note hoauhbdfsohaohdfsahsdfapiHSDJHGVHKLHJKGHUILJKHIUOAOIJSDFGVHUIOAEDFRGOIJUHPIUSADFGPHIU9EQR</p>
-
-               
-            </div>
-            <div class='date-removeCntr'>
-                <p class='noteCreatedDate'>00/00/0000</p>
-        
-                <mat-icon class='removeNoteBtn'>remove</mat-icon>
-            </div>
-        </div>
-
-        <div class='card' id='indNote'>
-            <div class='card-body'>
-                <p class='noteName'>Full Name Note hoauhbdfsohaohdfsahsdfapiHSDJHGVHKLHJKGHUILJKHIUOAOIJSDFGVHUIOAEDFRGOIJUHPIUSADFGPHIU9EQR</p>
-
-               
-            </div>
-            <div class='date-removeCntr'>
-                <p class='noteCreatedDate'>00/00/0000</p>
-        
-                <mat-icon class='removeNoteBtn'>remove</mat-icon>
+                <div class="removeNoteBtn"><mat-icon class='removeNoteBtn'  (click)="test()">remove</mat-icon></div>
             </div>
         </div>
 
     </div>
 </div>
+
+
+<!-- [note]={{note.id}} -->

@@ -23,23 +23,23 @@ export class ApiService {
     return this.httpClient.get<Note[]>(this.API_URL).pipe( catchError(this.errorHandler) )
   }
 
-  create(note): Observable<Note> {
+  create(note: any): Observable<Note> {
     return this.httpClient.post<Note>(this.API_URL, JSON.stringify(note), this.httpOptions).pipe(catchError(this.errorHandler))
   }
 
-  find(id): Observable<Note> {
+  find(id: any): Observable<Note> {
     return this.httpClient.get<Note>(this.API_URL + id).pipe(this.errorHandler)
   }
 
-  update(id, note): Observable<Note> {
+  update(id: any, note: any): Observable<Note> {
     return this.httpClient.put<Note>(this.API_URL + id, JSON.stringify(note), this.httpOptions).pipe( catchError(this.errorHandler) )
   }
 
-  delete(id) {
+  delete(id: any) {
     return this.httpClient.delete<Note>(this.API_URL + id, this.httpOptions).pipe( catchError(this.errorHandler))
   }
 
-  errorHandler(error) {
+  errorHandler(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
