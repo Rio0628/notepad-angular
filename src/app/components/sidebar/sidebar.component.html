@@ -14,13 +14,9 @@
             <button type='submit' (click)='setAddNote()' class='btn btn-primary btn-block' id='addNoteBtn'>Add Note</button> 
         </form>
 
-        <div class='notesprvCntr'>
+        <div class='notesprvCntr' *ngFor="let note of notes; let i = index">
             <div class='indPrevNote' routerLink='/note'>
-                <p class='prevNoteName'>Note</p>
-                <mat-icon class='removeNoteBtn'>remove</mat-icon>
-            </div>
-            <div class='indPrevNote'>
-                <p class='prevNoteName'>Note</p>
+                <p class='prevNoteName'>{{note.name}}</p>
                 <mat-icon class='removeNoteBtn'>remove</mat-icon>
             </div>
         </div>

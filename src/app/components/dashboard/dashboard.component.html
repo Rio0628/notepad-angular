@@ -12,8 +12,8 @@
 
     <div id='notesCntr' *ngFor="let note of notes; let i = index">
 
-        <div class='card' id='indNote'  routerLink='note'>
-            <div class='card-body'>
+        <div class='card' id='indNote' >
+            <div class='card-body' (click)="test2()">
                 <p class='noteName'>{{note.name}}</p>
 
                
@@ -21,7 +21,7 @@
             <div class='date-removeCntr'>
                 <p class='noteCreatedDate'>00/00/0000</p>
         
-                <div class="removeNoteBtn"><mat-icon class='removeNoteBtn'  (click)="test()">remove</mat-icon></div>
+                <mat-icon class='removeNoteBtn'  (click)="test(note.id)">remove</mat-icon>
             </div>
         </div>
 

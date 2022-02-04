@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ApiService } from './services/api.service';
-import { Note } from './note';
 import { OnInit } from '@angular/core';
 
 @Component({
@@ -12,9 +10,8 @@ import { OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   public title = 'notepad-angular';
   sidebarState = 'close';
-  notes : Note[] | undefined;
 
-  constructor (private apiService : ApiService) { }
+  constructor () { }
 
   // notes = ApiService.readNotes();
 

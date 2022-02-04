@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   @Input() sidebarOpen = '';
+  @Input() notes: any;
   addNoteToView = false;
 
   setAddNote = () => this.addNoteToView === false ? this.addNoteToView = true : this.addNoteToView = false;

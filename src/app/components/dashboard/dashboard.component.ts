@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { Note } from '../../note';
 
@@ -12,7 +13,7 @@ export class DashboardComponent implements OnInit {
   addNoteToView = false;
   notes: Note[] | undefined;
   
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   setAddNote = () => this.addNoteToView === false ? this.addNoteToView = true : this.addNoteToView = false;
   
@@ -33,7 +34,13 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  test() {
+  test(id: any) {
+    console.log(id)
+    this.router.navigate(['/']);
+  }
 
+  test2() {
+    console.log('mario')
+    this.router.navigate(['/note']);
   }
 }
