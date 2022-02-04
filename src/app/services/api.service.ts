@@ -1,16 +1,56 @@
 import { Injectable } from '@angular/core';
 import { Note } from '../note';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  PHP_API_SERVER  = 'http://localhost/database/api' // Check if the location is the correct one
+  
+  private API_URL  = 'http://localhost:8000/api/note/' 
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
   constructor(private httpClient: HttpClient) {}
   
-  readNotes(): Observable<Note[]> {
+  getAll(): Observable<Note[]> {
+    return this.httpClient.get<Note[]>(this.API_URL).pipe( catchError(this.errorHandler) )
+  }
+
+  create(note): Observable<Note> {
+    return this.httpClient.post<Note>(this.API_URL, JSON.stringify(note), this.httpOptions).pipe(catchError(this.errorHandler))
+  }
+
+  find(id): Observable<Note> {
+    return this.httpClient.get<Note>(this.API_URL + id).pipe(this.errorHandler)
+  }
+
+  update(id, note): Observable<Note> {
+    return this.httpClient.put<Note>(this.API_URL + id, JSON.stringify(note), this.httpOptions).pipe( catchError(this.errorHandler) )
+  }
+
+  delete(id) {
+    return this.httpClient.delete<Note>(this.API_URL + id, this.httpOptions).pipe( catchError(this.errorHandler))
+  }
+
+  errorHandler(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`
+    }
+    return throwError(errorMessage);
+  }
+
+ 
+/*   readNotes(): Observable<Note[]> {
     return this.httpClient.get<Note[]>(`${this.PHP_API_SERVER}/read.php`);
   }
 
@@ -24,7 +64,6 @@ export class ApiService {
 
   deleteNote(id: number) {
     return this.httpClient.delete<Note>(`${this.PHP_API_SERVER}/delete.php/?id=${id}`);
-  }
-
+  }*/
 }
 
