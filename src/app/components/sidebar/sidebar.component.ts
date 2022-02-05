@@ -42,7 +42,8 @@ export class SidebarComponent implements OnInit {
     console.log(this.form.value);
     this.apiService.create(this.form.value).subscribe(res => {
       console.log('Note Created Successfully!');
-      this.router.navigateByUrl('/note', {state: { note: this.form.value}});
+      this.sidebarOpen = 'close';
+      this.router.navigateByUrl('/note', {state: { note: this.form.value, noteCreated: true }});
     })
   }
 
@@ -51,7 +52,7 @@ export class SidebarComponent implements OnInit {
     console.log(this.notes);
     let currentNote = this.notes?.filter( note => note.id === id);
     console.log(currentNote)
-    this.router.navigateByUrl('/note',  { state: {note: currentNote}} );
+    this.router.navigateByUrl('/note',  { state: {note: currentNote, noteCreated: false}} );
     this.sidebarOpen = "close";
   }
 

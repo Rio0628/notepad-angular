@@ -43,7 +43,7 @@ export class MainNoteViewComponent implements OnInit {
     }
     else {
       this.editorForm.controls['name'].setValue(history.state.note[0].name);
-      this.editorForm.controls['name'].setValue(history.state.note[0].note_body);
+      this.editorForm.controls['note_body'].setValue(history.state.note[0].note_body);
 
       this.noteID = history.state.note[0].id;
     }
