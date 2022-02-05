@@ -2,19 +2,19 @@
 <div class='noteView'>
 
 
-    <form [formGroup]='editorForm' class='editorForm'>
+    <form [formGroup]='editorForm' class='editorForm' (ngSubmit)="updateNote()">
 
-        <div class='returnBtnCntr'><mat-icon class='returnBtn' (click)="returnToDash()">keyboard_arrow_left</mat-icon></div>
+        <div class='returnBtnCntr'><mat-icon class='returnBtn' (click)="updateNoteLeave()">keyboard_arrow_left</mat-icon></div>
 
         
         <div class='form-group'>
             <div class='nameBtnCntr'>
-                <input name='name' placeholder='Note Name' id='noteNameInput'/>
+                <input name='name' formControlName='name' placeholder='Note Name' id='noteNameInput'/>
             
-                <button class='saveNoteBtn' >Save Changes</button>
+                <button class='saveNoteBtn' type="submit">Save Changes</button>
             </div>
 
-            <quill-editor class='editor' formControlName='editor'></quill-editor>
+            <quill-editor class='editor' formControlName='note_body'></quill-editor>
         </div>
     </form>
 </div>

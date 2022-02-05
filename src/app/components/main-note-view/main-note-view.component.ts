@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms'
+import { ApiService } from '../../services/api.service';
+import { Note } from '../../note';
+import { FormGroup, FormControl, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-main-note-view',
@@ -10,13 +12,17 @@ import { FormGroup, FormControl } from '@angular/forms'
 export class MainNoteViewComponent implements OnInit {
 
   editorForm!: FormGroup;
+  noteID: '' | undefined;
   
-  constructor(private router: Router) {}
+  constructor(private apiService: ApiService ,private router: Router) {}
 
   ngOnInit() {
     this.editorForm = new FormGroup({
-      'editor': new FormControl(null)
+      'name':  new FormControl(history.state.note[0].name, [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+      'note_body': new FormControl(history.state.note[0].note_body)
     });
+
+    this.noteID = history.state.note[0].id;
 
     console.log(history.state);
   }
@@ -24,5 +30,20 @@ export class MainNoteViewComponent implements OnInit {
   returnToDash() {
     // Save code
     this.router.navigate(['']);
+  }
+
+  updateNoteLeave() {
+    console.log(this.editorForm.value);
+    this.apiService.update(this.noteID, this.editorForm.value).subscribe(res => {
+      console.log('Note updated Successfully!');
+      this.router.navigateByUrl('');
+    })
+  }
+
+  updateNote() {
+    console.log(this.editorForm.value);
+    this.apiService.update(this.noteID, this.editorForm.value).subscribe(res => {
+      console.log('Note Updated SuccessFully!');
+    })
   }
 }
