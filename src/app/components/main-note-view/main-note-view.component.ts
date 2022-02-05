@@ -11,20 +11,45 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class MainNoteViewComponent implements OnInit {
 
-  editorForm!: FormGroup;
+  editorForm: FormGroup | any;
   noteID: '' | undefined;
-  
+  notes: Note[] | undefined;
+  notesSearched: false | any;
+  currentNote: '' | any;
+
   constructor(private apiService: ApiService ,private router: Router) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    
     this.editorForm = new FormGroup({
-      'name':  new FormControl(history.state.note[0].name, [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
-      'note_body': new FormControl(history.state.note[0].note_body)
-    });
+      'name':  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+      'note_body': new FormControl('')
+    });  
 
-    this.noteID = history.state.note[0].id;
+    // console.log(history.state)
+    if (history.state.noteCreated) {
+      await this.apiService.getAll().subscribe((notes: Note[]) => {
+        this.notes = notes;
+        this.notesSearched = true;
+        console.log(this.notes);
+        this.currentNote = notes?.slice(-1);
+        console.log(this.currentNote);
 
-    console.log(history.state);
+        this.editorForm.controls['name'].setValue(this.currentNote[0].name);
+        this.editorForm.controls['note_body'].setValue(this.currentNote[0].note_body);
+        this.noteID = this.currentNote[0].id;
+      })
+      // console.log(this.notes);
+    }
+    else {
+      this.editorForm.controls['name'].setValue(history.state.note[0].name);
+      this.editorForm.controls['name'].setValue(history.state.note[0].note_body);
+
+      this.noteID = history.state.note[0].id;
+    }
+    
+    console.log(this.editorForm);
+    // console.log(history.state);
   }
   
   returnToDash() {

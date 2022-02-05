@@ -23,10 +23,7 @@ export class DashboardComponent implements OnInit {
   showAddNoteBtn = () => this.addNoteToView ? 'addNoteBtnAct' : 'addNoteBtn';
 
   ngOnInit(): void {
-    this.apiService.getAll().subscribe((notes: Note[]) => {
-      this.notes = notes;
-      console.log(this.notes);
-    });
+    this.getNotes();
 
     this.form = new FormGroup({
       name:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
@@ -34,18 +31,30 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  createNote() {
-    console.log(this.form.value);
-    this.apiService.create(this.form.value).subscribe(res => {
-      console.log('Person Created Successfully!');
-      // this.router.navigate(['/note']);
+  getNotes() {
+    this.apiService.getAll().subscribe((notes: Note[]) => {
+      this.notes = notes;
+      console.log(this.notes);
+      console.log('Get All Called');
+    })
+  }
+
+  async createNote() {
+    // console.log(this.form.value);
+    await this.apiService.create(this.form.value).subscribe(res => {
+      console.log('Note Created Successfully!');
     });
+    this.getNotes();
+    // const notes = this.notes;
+    // console.log(notes?.pop());
+   
+    this.router.navigateByUrl('/note', { state: { note: '', noteCreated: true }} );
   }
 
   deleteNote(id: any) {
     this.apiService.delete(id).subscribe(res => {
       this.notes = this.notes?.filter(item => item.id !== id);
-      console.log("Person Deleted Successfully!");
+      console.log("Note Deleted Successfully!");
     })
   }
 
@@ -59,6 +68,6 @@ export class DashboardComponent implements OnInit {
     console.log(this.notes);
     let currentNote = this.notes?.filter( note => note.id === id);
     console.log(currentNote)
-    this.router.navigateByUrl('/note',  { state: {note: currentNote}} );
+    this.router.navigateByUrl('/note',  { state: {note: currentNote, noteCreated: false}});
   }
 }

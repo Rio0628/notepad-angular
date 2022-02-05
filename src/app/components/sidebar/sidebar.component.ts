@@ -41,14 +41,9 @@ export class SidebarComponent implements OnInit {
   createNote() {
     console.log(this.form.value);
     this.apiService.create(this.form.value).subscribe(res => {
-      console.log('Person Created Successfully!');
-      // this.router.navigate(['/note']);
+      console.log('Note Created Successfully!');
+      this.router.navigateByUrl('/note', {state: { note: this.form.value}});
     })
-  }
-
-  test(id: any) {
-    console.log(id);
-
   }
 
   clickNote(id: any) {
