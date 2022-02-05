@@ -15,9 +15,9 @@
         </form>
 
         <div class='notesprvCntr' >
-            <div class='indPrevNote' (click)="clickNote(note.id)" *ngFor="let note of notes; let i = index">
-                <p class='prevNoteName'>{{note.name}}</p>
-                <mat-icon class='removeNoteBtn' (click)="test(note.id)">remove</mat-icon>
+            <div class='indPrevNote' *ngFor="let note of notes; let i = index">
+                <p class='prevNoteName' (click)="clickNote(note.id)">{{note.name}}</p>
+                <mat-icon class='removeNoteBtn' (click)="deleteNote(note.id)">remove</mat-icon>
             </div>
         </div>
     </mat-sidenav-content>

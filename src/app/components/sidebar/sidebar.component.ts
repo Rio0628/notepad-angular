@@ -59,5 +59,13 @@ export class SidebarComponent implements OnInit {
     this.router.navigateByUrl('/note',  { state: {note: currentNote}} );
     this.sidebarOpen = "close";
   }
+
+  deleteNote(id: any) {
+    this.apiService.delete(id).subscribe(res => {
+      this.notes = this.notes?.filter(item => item.id !== id);
+      console.log("Note Deleted Successfully!");
+    })
+    this.router.navigateByUrl('');
+  }
 }
 
