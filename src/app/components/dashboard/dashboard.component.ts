@@ -54,8 +54,11 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  test2() {
-    console.log('mario')
-    this.router.navigate(['/note']);
+  clickNote(id: any) {
+    console.log(id);
+    console.log(this.notes);
+    let currentNote = this.notes?.filter( note => note.id === id);
+    console.log(currentNote)
+    this.router.navigateByUrl('/note',  { state: {note: currentNote}} );
   }
 }

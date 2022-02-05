@@ -15,7 +15,7 @@
         </form>
 
         <div class='notesprvCntr' >
-            <div class='indPrevNote' (click)="test2()" *ngFor="let note of notes; let i = index">
+            <div class='indPrevNote' (click)="clickNote(note.id)" *ngFor="let note of notes; let i = index">
                 <p class='prevNoteName'>{{note.name}}</p>
                 <mat-icon class='removeNoteBtn' (click)="test(note.id)">remove</mat-icon>
             </div>

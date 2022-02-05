@@ -13,7 +13,7 @@
     <div id='notesCntr' >
 
         <div class='card' id='indNote' *ngFor="let note of notes; let i = index">
-            <div class='card-body' (click)="test2()">
+            <div class='card-body' (click)="clickNote(note.id)">
                 <p class='noteName'>{{note.name}}</p>
 
                

@@ -51,9 +51,13 @@ export class SidebarComponent implements OnInit {
 
   }
 
-  test2() {
-    this.sidebarOpen = 'close';
-    this.router.navigate(['/note']);
+  clickNote(id: any) {
+    console.log(id);
+    console.log(this.notes);
+    let currentNote = this.notes?.filter( note => note.id === id);
+    console.log(currentNote)
+    this.router.navigateByUrl('/note',  { state: {note: currentNote}} );
+    this.sidebarOpen = "close";
   }
 }
 

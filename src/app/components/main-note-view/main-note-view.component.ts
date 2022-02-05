@@ -17,6 +17,8 @@ export class MainNoteViewComponent implements OnInit {
     this.editorForm = new FormGroup({
       'editor': new FormControl(null)
     });
+
+    console.log(history.state);
   }
   
   returnToDash() {
