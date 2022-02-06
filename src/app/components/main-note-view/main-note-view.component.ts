@@ -71,4 +71,11 @@ export class MainNoteViewComponent implements OnInit {
       console.log('Note Updated SuccessFully!');
     })
   }
+
+  deleteNote() {
+    this.apiService.delete(this.noteID).subscribe( res => {
+      alert('Note Deleted Successfully!');
+      this.router.navigateByUrl('');
+    })
+  }
 }

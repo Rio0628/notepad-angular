@@ -4,7 +4,11 @@
 
     <form [formGroup]='editorForm' class='editorForm' (ngSubmit)="updateNote()">
 
-        <div class='returnBtnCntr'><mat-icon class='returnBtn' (click)="updateNoteLeave()">keyboard_arrow_left</mat-icon></div>
+        <div class='returnBtnCntr'>
+            <mat-icon class='returnBtn' (click)="updateNoteLeave()">keyboard_arrow_left</mat-icon>
+        
+            <button class="deleteNoteBtn" (click)="deleteNote()">Delete Note</button>
+        </div>
 
         
         <div class='form-group'>

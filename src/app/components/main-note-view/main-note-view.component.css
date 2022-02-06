@@ -13,6 +13,10 @@
     position: relative;
     top: 1.5rem;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* outline: 1px solid red; */
 }
 
 .returnBtn {
@@ -28,13 +32,13 @@
     align-items: center;
     cursor: pointer;
 }
-.returnBtn:hover, .saveNoteBtn:hover {
+.returnBtn:hover, .saveNoteBtn:hover, .deleteNoteBtn:hover {
     background: #343a40;
     color: #fff;
     transition: .2s linear ;
 }
 
-.returnBtn:active, .saveNoteBtn:active {
+.returnBtn:active, .saveNoteBtn:active, .deleteNoteBtn:active {
     background: none;
     color: #343a40;
     transition: none;
@@ -80,7 +84,7 @@
     /* outline: none;  */
 }
 
-.saveNoteBtn {
+.saveNoteBtn, .deleteNoteBtn {
     position: relative;
     right: 10px;
     border: none;
@@ -90,6 +94,12 @@
     cursor: pointer;
     color: #343a40;
     outline: none;
+}
+
+.deleteNoteBtn {
+    height: 2.1rem;
+    right: 12px;
+    padding: 0px 15px;
 }
 
 .editor {
@@ -152,7 +162,7 @@
         width: 22rem;
     }
 
-    .saveNoteBtn {
+    .saveNoteBtn, .deleteNoteBtn {
         right: 3rem;
     }
 }
