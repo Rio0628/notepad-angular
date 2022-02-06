@@ -12,17 +12,13 @@ export class AppComponent implements OnInit {
   sidebarState = 'close';
 
   constructor () { }
-
-  // notes = ApiService.readNotes();
-  
+ 
+  // Change the value of the sidebarState var to bring the sidebar to view and out of view 
   setSidebarState = () => this.sidebarState === 'open' ? this.sidebarState = 'close' : this.sidebarState = 'open';
 
   ngOnInit() : void {
-    // console.log(this.searchbar);
   }
 
 
 
 }
-
-// console.log(title);

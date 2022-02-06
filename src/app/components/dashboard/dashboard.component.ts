@@ -17,12 +17,17 @@ export class DashboardComponent implements OnInit {
   
   constructor(private apiService: ApiService, private router: Router) { }
 
+  // Changes the state of the addNoteView variable
   setAddNote = () => this.addNoteToView === false ? this.addNoteToView = true : this.addNoteToView = false;
   
-  showAddNote = () => this.addNoteToView ? 'addNoteForm active' : 'addNoteForm'; 
+  // Changes the class name for the add note fields to bring it to view according to the value of the addNoteView variable 
+  showAddNote = () => this.addNoteToView ? 'addNoteForm active' : 'addNoteForm';
+  
+  // Changes the class name for the addNoteView fields to bring it to view according to the value of the addNoteView variable
   showAddNoteBtn = () => this.addNoteToView ? 'addNoteBtnAct' : 'addNoteBtn';
 
   ngOnInit(): void {
+    // Calls all notes and creates a basic form group for adding a new note
     this.getNotes();
     this.form = new FormGroup({
       name:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
@@ -31,6 +36,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getNotes() {
+    // Calls the get all api service in order to get all notes within the database 
     this.apiService.getAll().subscribe((notes: Note[]) => {
       this.notes = notes;
       console.log(this.notes);
@@ -39,30 +45,24 @@ export class DashboardComponent implements OnInit {
   }
 
   async createNote() {
-    // console.log(this.form.value);
+    // Creates a new note object and redirects the user to the note view route
     await this.apiService.create(this.form.value).subscribe(res => {
       console.log('Note Created Successfully!');
     });
-    this.getNotes();
-    // const notes = this.notes;
-    // console.log(notes?.pop());
    
     this.router.navigateByUrl('/note', { state: { note: '', noteCreated: true }} );
   }
 
   deleteNote(id: any) {
+    // Deletes a certain note from the database
     this.apiService.delete(id).subscribe(res => {
       this.notes = this.notes?.filter(item => item.id !== id);
       alert("Note Deleted Successfully!");
     })
   }
 
-  test(id: any) {
-    console.log(id)
-    this.router.navigate(['/']);
-  }
-
   clickNote(id: any) {
+    // Gets the note that is beign clicekd onf rom the notes array and redirect the user to the main note router view with the current note as values for the editor 
     console.log(id);
     console.log(this.notes);
     let currentNote = this.notes?.filter( note => note.id === id);

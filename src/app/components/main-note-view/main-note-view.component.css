@@ -7,8 +7,6 @@
     align-items: center;
 }
 
-/* .noteView * { outline: 1px solid red; } */
-
 .returnBtnCntr {
     position: relative;
     top: 1.5rem;
@@ -16,17 +14,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* outline: 1px solid red; */
 }
 
 .returnBtn {
     position: relative;
-    /* left: 1%; */
     font-size: 45px;
     height: 3rem;
     width: 3rem;
     font-weight: 600; 
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,13 +41,11 @@
 
 .editorForm {
     position: relative;
-    /* top: 4rem; */
     height: 90%;
     width: 21.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* outline: 1px solid red; */
 }
 
 .form-group {
@@ -63,7 +56,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* outline: 1px solid red; */
 }
 
 .nameBtnCntr {
@@ -81,7 +73,6 @@
     font-size: 17px;
     background: none;
     border: none;
-    /* outline: none;  */
 }
 
 .saveNoteBtn, .deleteNoteBtn {
@@ -110,7 +101,6 @@
 @media screen and (min-width: 500px) {
     .editorForm {
         width: 30rem;
-        /* background: red; */
     }
 
     #noteNameInput { width: 16rem; }

@@ -1,8 +1,6 @@
 
  .dashboard {
-    /* position: relative; */
     height: 90%;
-    /* width: 80%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,15 +15,12 @@
     font-size: 30px;
     font-weight: 600;
     letter-spacing: 2px;
-    /* text-transform: uppercasea; */
-    /* outline: 1px solid red; */
 }
 
 .addNoteForm, #addNoteBtn {
     position: relative;
     top: 2.2rem;
     width: 20rem;
-    /* outline: 1px solid blue; */
 }
 
 #addNoteBtn {
@@ -111,7 +106,6 @@
     font-size: 18px;
     font-weight: 600;
     overflow: hidden;
-    /* outline: 1px solid green; */
 }
 
 .date-removeCntr {
@@ -119,7 +113,6 @@
     bottom: 20px;
     left: 20px;
     width: 85%;
-    /* outline: 1px solid red; */
     display: flex;
     align-items: center;
     justify-content: space-between;

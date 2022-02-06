@@ -20,14 +20,15 @@ export class MainNoteViewComponent implements OnInit {
   constructor(private apiService: ApiService ,private router: Router) {}
 
   async ngOnInit() {
-    
+    // Basic form for name and editor 
     this.editorForm = new FormGroup({
       'name':  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       'note_body': new FormControl('')
     });  
 
-    // console.log(history.state)
+    // Conditional that populates form fields according to if the note object is created or just clicked on
     if (history.state.noteCreated) {
+      // Calls the get all api service and gets the last note (last one created) and populates the forms field with it 
       await this.apiService.getAll().subscribe((notes: Note[]) => {
         this.notes = notes;
         this.notesSearched = true;
@@ -39,25 +40,18 @@ export class MainNoteViewComponent implements OnInit {
         this.editorForm.controls['note_body'].setValue(this.currentNote[0].note_body);
         this.noteID = this.currentNote[0].id;
       })
-      // console.log(this.notes);
     }
     else {
+      // Populdates the form fields from the note object that is within state 
       this.editorForm.controls['name'].setValue(history.state.note[0].name);
       this.editorForm.controls['note_body'].setValue(history.state.note[0].note_body);
 
       this.noteID = history.state.note[0].id;
     }
-    
-    console.log(this.editorForm);
-    // console.log(history.state);
-  }
-  
-  returnToDash() {
-    // Save code
-    this.router.navigate(['']);
   }
 
   updateNoteLeave() {
+    // Updates a note using the ID provided with the values of the form | Takes the user back to the dahsboard router view
     console.log(this.editorForm.value);
     this.apiService.update(this.noteID, this.editorForm.value).subscribe(res => {
       console.log('Note updated Successfully!');
@@ -66,6 +60,7 @@ export class MainNoteViewComponent implements OnInit {
   }
 
   updateNote() {
+    // Updates a notes using the ID provided with the values of the form 
     console.log(this.editorForm.value);
     this.apiService.update(this.noteID, this.editorForm.value).subscribe(res => {
       console.log('Note Updated SuccessFully!');
@@ -73,6 +68,7 @@ export class MainNoteViewComponent implements OnInit {
   }
 
   deleteNote() {
+    // Deletes a certain note from the database
     this.apiService.delete(this.noteID).subscribe( res => {
       alert('Note Deleted Successfully!');
       this.router.navigateByUrl('');
