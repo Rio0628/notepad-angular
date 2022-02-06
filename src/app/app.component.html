@@ -7,7 +7,7 @@
     <input 
       class='noteNameInput'
       name='search'
-      ngModel
+      (keyup)="searchbarFunc($event)"
       placeholder='Search Note'
     />
   </nav>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { SearchbarService } from '../../services/searchbar.service';
 import { Note } from '../../note';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit {
   form: FormGroup | any;
   notes: Note[] | undefined;
   
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private searchbarService: SearchbarService, private router: Router) { }
 
   setAddNote = () => this.addNoteToView === false ? this.addNoteToView = true : this.addNoteToView = false;
   
@@ -24,12 +25,18 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNotes();
-
+    this.getSearchValue();
     this.form = new FormGroup({
       name:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
       note_body:  new FormControl('<p>Enter Note Here</p>', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
     });
   }
+  
+  getSearchValue () {
+    const searchValue = this.searchbarService.getSearchValue();
+    console.log(searchValue);
+  }
+  
 
   getNotes() {
     this.apiService.getAll().subscribe((notes: Note[]) => {
