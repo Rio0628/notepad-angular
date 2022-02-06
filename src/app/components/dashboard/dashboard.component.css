@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    outline: 1px solid red;
 }
 
 .dashboard-heading {
@@ -71,7 +70,6 @@
     grid-row-gap: 1rem;
     overflow-x: hidden;
     overflow-y: scroll;
-    outline: 1px solid red;
 }
 
 #notesCntr::-webkit-scrollbar {
