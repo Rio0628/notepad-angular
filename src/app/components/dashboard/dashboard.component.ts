@@ -49,6 +49,7 @@ export class DashboardComponent implements OnInit {
     await this.apiService.create(this.form.value).subscribe(res => {
       console.log('Note Created Successfully!');
     });
+    this.getNotes();
    
     this.router.navigateByUrl('/note', { state: { note: '', noteCreated: true }} );
   }
