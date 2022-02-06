@@ -53,7 +53,7 @@ export class DashboardComponent implements OnInit {
   deleteNote(id: any) {
     this.apiService.delete(id).subscribe(res => {
       this.notes = this.notes?.filter(item => item.id !== id);
-      console.log("Note Deleted Successfully!");
+      alert("Note Deleted Successfully!");
     })
   }
 
