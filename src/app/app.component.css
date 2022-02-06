@@ -29,15 +29,6 @@
   opacity: 0;
   pointer-events: none; 
 }
-  
-.noteNameInput {
-  position: relative;
-  right: 10px;
-  width: 15rem;
-  height: 2rem;
-  padding: 0px 10px;
-  outline: none;
-}
 
 .icon {
   position: relative;
@@ -61,19 +52,6 @@
   transition: .1s linear;
 }
 
-@media screen and (min-width: 650px) {
-  .noteNameInput {
-    width: 20rem;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .noteNameInput {
-    width: 25rem;
-  }
-}
-
-
 @media screen and (min-width: 1000px) {
 
   #logo {
@@ -88,10 +66,6 @@
     pointer-events: none;
   }
 
-  .noteNameInput {
-    width: 30rem;
-  }
-
   .info-container {
     display: flex;
   }
@@ -101,19 +75,11 @@
   #logo {
     left: 10rem;
   }
-
-  .noteNameInput {
-    right: 7rem;
-  }
 }
 
 @media screen and (min-width: 1600px) {
   #logo {
     left: 15.5rem;
-  }
-
-  .noteNameInput {
-    right: 13rem;
   }
 }
 
@@ -121,18 +87,10 @@
   #logo {
     left: 20rem;
   }
-
-  .noteNameInput {
-    right: 22rem;
-  }
 }
 
 @media screen and (min-width: 2350px) {
   #logo {
     left: 37.5rem;
-  }
-
-  .noteNameInput {
-    right: 29rem;
   }
 }
